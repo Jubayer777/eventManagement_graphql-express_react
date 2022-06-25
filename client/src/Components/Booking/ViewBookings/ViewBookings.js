@@ -60,8 +60,8 @@ const ViewBookings = ({ bookings }) => {
           : "Your Bookings"}
       </h1>
       <div className="viewContainer">
-        {bookings?.map((b) => (
-          <div className="viewCard">
+        {bookings?.map((b,i) => (
+          <div key={i} className="viewCard">
             <div key={b._id}>
               <img className="bookingImg" src={bookingImg} />
               <div className="viewInfoDiv">

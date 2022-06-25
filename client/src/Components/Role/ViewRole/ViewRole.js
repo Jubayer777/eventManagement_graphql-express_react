@@ -19,7 +19,7 @@ const ViewRole = () => {
   return (
     <div className="roleDiv">
       {roles?.map((r, i) => (
-        <p className="roleList">
+        <p key={i} className="roleList">
           {i + 1}: {r.title}
         </p>
       ))}

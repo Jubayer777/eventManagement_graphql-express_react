@@ -80,11 +80,11 @@ const ViewUsers = () => {
     <>
       <Navbar />
       <div className="viewContainer">
-        {users?.map((u) => (
-          <div className="viewCard">
+        {users?.map((u,i) => (
+          <div key={i} className="viewCard">
             <div key={u._id} className="">
               <img className="userAvatar" src={userAvatar} />
-              <diV className="viewInfoDiv">
+              <div className="viewInfoDiv">
                 <h4>Email: {u.email}</h4>
                 {userRole === "superAdmin" && userId !== u._id ? (
                   <select
@@ -93,7 +93,7 @@ const ViewUsers = () => {
                     onChange={(e) => handleRole(e, u._id)}
                   >
                     {roles?.map((r) => (
-                      <option value={r._id} selected={u.role._id === r._id}>
+                      <option key={r._id} value={r._id} selected={u.role._id === r._id}>
                         {r.title}
                       </option>
                     ))}
@@ -102,13 +102,13 @@ const ViewUsers = () => {
                   <p>Role: {u.role.title}</p>
                 )}
                 {u.createdEvents.map((e, i) => (
-                  <div>
+                  <div key={i}>
                     <h5 className="eventsList">
                       Events-{i + 1}:{e.title}h
                     </h5>
                   </div>
                 ))}
-              </diV>
+              </div>
             </div>
             <div className="userBtnDiv">
               {(u.role.title == "user" ||
