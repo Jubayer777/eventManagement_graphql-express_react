@@ -11,7 +11,7 @@ const AllBookings = () => {
     },
     onError: (errors) => {
       if (errors.message) {
-        alert(errors.message);
+        // alert(errors.message);
         setBookings([]);
       }
     },

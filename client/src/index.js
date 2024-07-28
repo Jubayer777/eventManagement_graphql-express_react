@@ -19,7 +19,7 @@ const authLink = setContext(() => {
     headers: {
       Authorization: token ? `Bearer ${token}` : "",
       Role: userRole ? userRole : "",
-    },
+    }
   };
 });
 
